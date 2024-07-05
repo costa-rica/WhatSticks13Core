@@ -17,8 +17,8 @@ def default_username(context):
 class Users(Base, UserMixin):
     __tablename__ = 'users'
     id = Column(Integer, primary_key = True)
-    email = Column(String(255), unique = True, nullable = False)
-    password = Column(Text, nullable = False)
+    email = Column(String(255), unique = True)
+    password = Column(Text)
     username = Column(Text, default=default_username)
     timezone = Column(Text)
     location_permission_device = Column(Text, default=False)# was location_permission
@@ -54,7 +54,7 @@ class Users(Base, UserMixin):
         return user
 
     def __repr__(self):
-        return f'Users(id: {self.id}, email: {self.email}' \
+        return f'Users(id: {self.id}, email: {self.email}, username: {self.username}, ' \
         f'location_permission_ws: {self.location_permission_ws})'
 
 
