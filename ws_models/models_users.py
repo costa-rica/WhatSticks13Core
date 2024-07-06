@@ -20,7 +20,7 @@ class Users(Base, UserMixin):
     email = Column(String(255), unique = True)
     password = Column(Text)
     username = Column(Text, default=default_username)
-    timezone = Column(Text)
+    timezone = Column(Text, default="Etc/GMT")
     location_permission_device = Column(Text, default=False)# was location_permission
     location_permission_ws = Column(Text, default=False)# was location_reoccuring_permission
     admin_users_permission = Column(Boolean, default=False)
