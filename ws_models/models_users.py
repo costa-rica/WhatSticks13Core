@@ -21,8 +21,8 @@ class Users(Base, UserMixin):
     password = Column(Text)
     username = Column(Text, default=default_username)
     timezone = Column(Text, default="Etc/GMT")
-    location_permission_device = Column(Text)# was location_permission
-    location_permission_ws = Column(Text)# was location_reoccuring_permission
+    location_permission_device = Column(Boolean, default=False)# was location_permission
+    location_permission_ws = Column(Boolean, default=False)# was location_reoccuring_permission
     admin_permission = Column(Boolean, default=False)
     notifications = Column(Boolean, default=False)
     time_stamp_utc = Column(DateTime, nullable = False, default = datetime.utcnow)
