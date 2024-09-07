@@ -27,6 +27,7 @@ class Users(Base, UserMixin):
     notifications = Column(Boolean, default=False)
     time_stamp_utc = Column(DateTime, nullable = False, default = datetime.utcnow)
     loc_day = relationship('UserLocationDay', backref='user_loc_day', lazy=True)
+    pending_user_id = relationship('PendingUsers', backref='user_pending_user_id', lazy=True)
 
 
     def get_reset_token(self):
@@ -57,5 +58,17 @@ class Users(Base, UserMixin):
         return f'Users(id: {self.id}, email: {self.email}, username: {self.username}, ' \
         f'location_permission_ws: {self.location_permission_ws})'
 
+class PendingUsers(Base):
+    __tablename__ = 'pending_users'
+    id = Column(Integer, primary_key = True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    email = Column(String(255), unique = True)
+    password = Column(Text)
+    username = Column(Text, default=default_username)
+    time_stamp_utc = Column(DateTime, nullable = False, default = datetime.utcnow)
+
+    def __repr__(self):
+        return f'PendingUsers(id: {self.id}, user_id: {self.user_id}, email: {self.email}, ' \
+        f'username: {self.username}, time_stamp_utc: {self.time_stamp_utc})'
 
 
