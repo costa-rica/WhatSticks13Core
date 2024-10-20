@@ -66,6 +66,8 @@ class ConfigBasic():
         self.DIR_WEBSITE_UTILITY_IMAGES = os.path.join(self.WEBSITE_FILES,"website_utility_images")# <-- store blog word documents
         self.DIR_WEBSITE_VIDEOS = os.path.join(self.WEBSITE_FILES,"website_videos")# <-- store videos
 
+        # apple service
+        self.DIR_APPLE_SERVICE_HELPERS = os.path.join(self.PROJECT_RESOURCES,"apple_service_helpers")
         
         # paramters for database/dataframe files
         self.APPLE_HEALTH_QUANTITY_CATEGORY_FILENAME_PREFIX = "AppleHealthQuantityCategory"
