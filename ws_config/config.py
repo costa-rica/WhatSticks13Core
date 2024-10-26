@@ -86,7 +86,9 @@ class ConfigBasic():
         self.WS_API_PASSWORD = config_json_dict.get('WS_API_PASSWORD')
 
         #Admin stuff
-        self.ADMIN_EMAILS = config_json_dict.get('ADMIN_EMAILS')
+        # self.ADMIN_EMAILS = config_json_dict.get('ADMIN_EMAILS')
+        self.ADMIN_EMAIL = config_json_dict.get('ADMIN_EMAIL')
+        self.ADMIN_PASSWORD = config_json_dict.get('ADMIN_PASSWORD')
         self.DIR_LOGS = os.path.join(self.PROJECT_RESOURCES,"logs")
         self.ACTIVATE_TECHNICAL_DIFFICULTIES_ALERT = config_json_dict.get('ACTIVATE_TECHNICAL_DIFFICULTIES_ALERT') == "True"
 

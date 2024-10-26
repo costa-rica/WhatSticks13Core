@@ -1,5 +1,5 @@
 # print("- in __init__.py")
-from .base import Base, create_engine, inspect, engine, DatabaseSession, text
+from .base import Base, create_engine, inspect, engine, DatabaseSession, text, sessionmaker
 from .models_users import Users, PendingUsers
 from .models_locations import UserLocationDay, Locations, WeatherHistory
 from .models_apple_health import AppleHealthQuantityCategory, AppleHealthWorkout

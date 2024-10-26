@@ -8,10 +8,13 @@ from flask_login import UserMixin
 from .config import config
 import os
 from flask import current_app
-
+from ._common.custom_logger import logger_ws_models
 
 def default_username(context):
+    logger_ws_models.info("- in default_username ????")
+    # logger_ws_models.info("context.get_current_parameters(): ", context.get_current_parameters()['email'].split('@')[0])
     return context.get_current_parameters()['email'].split('@')[0]
+    # return 'whatsticks-test'
 
 
 class Users(Base, UserMixin):
